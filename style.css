@@ -14,16 +14,16 @@ body {
   }
   
   /* colours */
-  .color-violet {
-    background-color: #7A4EAB;
-  }
-  .color-indigo {
-    background-color: #4332CF;
-  }
-  .color-blue {
-    background-color: #2F8FED;
+  .color-beige {
+    background-color: #E3CFB2;
   }
   .color-green {
+    background-color: #2D6445;
+  }
+  .color-black {
+    background-color:#000;
+  }
+  .color-indigo {
     background-color: #4DCF42;
   }
   .color-yellow {
@@ -46,10 +46,102 @@ body {
     vertical-align: middle;
     padding: 30px;
 }
+.marquee {
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee span {
+    display: inline-block;
+    font-size: 20px;
+    position: relative;
+    left: 50%;
+    animation: marquee 10s linear infinite;
+  }
+  
+  .marquee span:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .marquee span:nth-child(2) {
+    animation-delay: 0s;
+  }
+  .marquee span:nth-child(3) {
+    animation-delay: 0s;
+  }
+  .marquee span:nth-child(4) {
+    animation-delay: 0s;
+  }
+  
+  @keyframes marquee {
+    0%   { left: 0%; }
+    100% { left: -100%; }
+  }
+
+
+/*marquee2*/
+  .marquee2 {
+    background-color: #ddd;
+    width: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee2 span {
+    display: inline-block;
+    font-size: 40px;
+    position: relative;
+    left: 50%;
+    animation: marquee 10s linear infinite;
+  }
+  .marquee2:hover span {
+    animation-play-state: paused;
+  }
+  
+  .marquee2 span:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .marquee2 span:nth-child(2) {
+    animation-delay: 0s;
+  }
+  .marquee2 span:nth-child(3) {
+    animation-delay: 0s;
+  }
+  .marquee2 span:nth-child(4) {
+    animation-delay: 0s;
+  }
+  
+  @keyframes marquee {
+    0%   { left: 0%; }
+    100% { left: -100%; }
+  }
+
+#container {
+     position:relative;
+     width:424px;
+     height:106px;
+     overflow:hidden;
+     margin:100px auto 0 auto;
+ }
+#div1 {
+     position:absolute;
+     left:0px;
+     top:0px;
+     width:424px;
+     height:106px;
+ }
+#div2 {
+     position:absolute;
+     left:424px;
+     top:0px;
+     width:424px;
+     height:106px;
+ }
+img {
+     margin:2px;
+     float:left;
+ }
 
 h1 {
-    margin-top: 200px;
-    margin-bottom: 200px;
     margin-right: 150px;
     margin-left: 150px;
     letter-spacing: 5px;
@@ -61,22 +153,37 @@ h1 {
 h2 {
     margin-top: 10px;
     margin-bottom: 10px;
-    font-family: 'MuseoModerno', cursive;
-    font-style: italic;
+    font-family: 'Silkscreen', cursive; 
     font-size: 70px;
+    color: #f4f4f4;
     text-align: center;
 }
 
 h3 {
     font-family: 'MuseoModerno', cursive;
-    font-size: 45px;
+    font-size: 40px;
+    color: #000;
+    text-align: center;
+}
+
+h4 {
+    font-family:'MuseoModerno', cursive;
+    font-size: 40px;
+    color: #000;
     text-align: center;
 }
 
 p {
-    margin-bottom: 80px;
+    font-family: 'Syne', sans-serif;
     margin-right: 80px;
     margin-left: 80px;
+    word-spacing: 5%;
+    letter-spacing: 100%;
+  }
+
+div {
+    text-align: justify;
+    text-justify: inter-word;
   }
 
 /*visited link*/
@@ -93,3 +200,26 @@ a:hover {
 a:active {
     color: aliceblue;
 }
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    outline: #000;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    font-family: 'Meie Script', cursive;
+    font-size: 50px;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel2 {
+    display: none;
+    overflow: hidden;
+  }
