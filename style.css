@@ -35,11 +35,6 @@ body {
   .color-red {
     background-color: #F2293A;
   }
-    background-image: url(img/bgimg.png);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
 
 .image-container {
     display: table-cell;
@@ -76,7 +71,7 @@ body {
     0%   { left: 0%; }
     100% { left: -100%; }
   }
-
+   
 
 /*marquee2*/
   .marquee2 {
@@ -137,9 +132,37 @@ body {
      height:106px;
  }
 img {
-     margin:2px;
-     float:left;
+    margin:0px;
  }
+
+ .center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+
+  .container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  
+  .image {
+    flex-basis: 40%
+  }
+  
+  .text {
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+.row {
+    width: 700px;
+    margin: 10px auto 10px auto;
+}
+
 
 h1 {
     margin-right: 150px;
@@ -151,8 +174,8 @@ h1 {
 }
 
 h2 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0.1vw;
+    margin-bottom: 0.1vw;
     font-family: 'Silkscreen', cursive; 
     font-size: 70px;
     color: #f4f4f4;
@@ -168,41 +191,46 @@ h3 {
 
 h4 {
     font-family:'MuseoModerno', cursive;
-    font-size: 40px;
-    color: #000;
+    font-size: 3.5vw;
+    margin-left: 50px;
+    color: white;
     text-align: center;
 }
 
 p {
     font-family: 'Syne', sans-serif;
-    margin-right: 80px;
-    margin-left: 80px;
-    word-spacing: 5%;
-    letter-spacing: 100%;
+    font-size: : 12px;
+    margin-left: 50px;
+    margin-right: 50px;
+    word-spacing: 10%;
+    letter-spacing: 1.5px;
   }
 
 div {
     text-align: justify;
     text-justify: inter-word;
   }
+  
+  
 
 /*visited link*/
 a:visited {
-    color: aqua;
+    color: rgb(25, 0, 255);
 }
 
 /*hover over link*/
 a:hover {
-    color: bisque;
+    color: rgb(255, 255, 255);
 }
 
 /*while clicking link*/
 a:active {
-    color: aliceblue;
+    color: rgb(16, 77, 28);
 }
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
+    font-size:3vw;
     margin-bottom: 5px;
     margin-top: 5px;
     outline: #000;
@@ -214,8 +242,8 @@ a:active {
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .accordion:hover {
-    font-family: 'Meie Script', cursive;
-    font-size: 50px;
+    font-family: 'Tangerine', cursive;
+    font-size: 4vw;
   }
   
   /* Style the accordion panel. Note: hidden by default */
@@ -223,3 +251,4 @@ a:active {
     display: none;
     overflow: hidden;
   }
+  
