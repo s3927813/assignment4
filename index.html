@@ -3,19 +3,28 @@
 
 <head>
     <title>Alice's Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Tangerine:wght@700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Meie+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@500&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@500&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,600;1,500&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,181 +32,378 @@
 
 <body>
     <script>
-        $(window).scroll(function() {
-      
+        $(window).scroll(function () {
+
             // selectors
             var $window = $(window),
                 $body = $('body'),
                 $panel = $('.panel');
-            
+
             // Change 33% earlier than scroll position so colour is there when you arrive.
             var scroll = $window.scrollTop() + ($window.height() / 3);
-           
+
             $panel.each(function () {
-              var $this = $(this);
-              
-              // if position is within range of this panel.
-              // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
-              // Remember we set the scroll to 33% earlier in scroll var.
-              if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
-                    
-                // Remove all classes on body with color-
-                $body.removeClass(function (index, css) {
-                  return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
-                });
-                 
-                // Add class of currently active div
-                $body.addClass('color-' + $(this).data('color'));
-              }
-            });    
-            
-          }).scroll();</script>
-  
-  
+                var $this = $(this);
 
-  <div class="panel" data-color="white"> 
-    <div>
-    <p class="marquee" id="heading">
-        <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
-        <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
-        <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
-        <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
-        <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
-      </p>
+                // if position is within range of this panel.
+                // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+                // Remember we set the scroll to 33% earlier in scroll var.
+                if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
 
-    <h1>WELCOME TO ALICE'S WEB PORTFOLIO </h1>
-    <p class="marquee">
-        <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
-        <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
-        <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
-        <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
-        <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
-      </p>
-    <br><br><br><br><br><br><br><br>
+                    // Remove all classes on body with color-
+                    $body.removeClass(function (index, css) {
+                        return (css.match(/(^|\s)color-\S+/g) || []).join(' ');
+                    });
 
-  
+                    // Add class of currently active div
+                    $body.addClass('color-' + $(this).data('color'));
+                }
+            });
 
-<h3 button class="accordion">About Me</button> <hr></h3>
+        }).scroll();
+    </script>
 
 
-<div class="panel2">
-     <h4> Wowie A Whole Page About Me! </h4> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-</div>
-        <br><br><br><br><br><br><br><br><br><br><br>
-</div>
-</div>
 
-<div class="panel" data-color="black">
+    <div class="panel" data-color="white">
+        <div>
+            <p class="marquee" id="heading">
+                <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
+                <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
+                <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
+                <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
+                <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
+            </p>
 
-        <h2 class="marquee">
-            <span> Alice's Digital Media Projects </span>
-            <span>Alice's Digital Media Projects</span>
-            <span> Alice's Digital Media Projects</span>
-            <span> Alice's Digital Media Projects</span>
-            <span> Alice's Digital Media Projects</span>
-            <span> Alice's Digital Media Projects</span>
-            <span> Alice's Digital Media Projects</span>
-          </p>
-    <h2> Alice's Digital Media Projects </h2>
-    <br><br><br><br><br><br><br><br>
-
-    <h3 style="color:white" class="accordion">Video Remix</button><hr></h3>
-<div class="panel2">
-  <p style="color:white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-   laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-   magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-   laborum.</p>
-</div>
-
-<h3 style="color:white" class="accordion">Icon and Web Html</button><hr></h3>
-<div class="panel2">
-  <p style="color:white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-   laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-   magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-   laborum.</p>
-</div>
-
-<h3 style="color:white" class="accordion">       3D Environment</button><hr></h3>
-<div class="panel2">
-  <p style="color:white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-   laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-   magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-   laborum.</p>
-</div>
+            <h1 style="font-size:6vw">WELCOME TO ALICE'S WEB PORTFOLIO </h1>
+            <p class="marquee">
+                <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
+                <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
+                <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
+                <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
+                <span><img src="img/marquee.png" height="200px" alt="marquee"></span>
+            </p>
+            <br><br><br><br><br><br><br><br>
 
 
-    <h3> Video Remix </h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-     magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.
-    </p>
-</div>
-</div>
 
- <div class="panel" data-color="beige"> 
-    <div>
-    <div style="text-align:center;"><iframe width="1300" height="315" src="https://www.youtube.com/embed/orxoJ2FpChI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    <br><br><br>
-    <h3>   Icon and Web html </h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-     magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.
-    </p>
-</div>
-</div>
-<ul>
-    <li><a href="#heading">Back To Top </a></li>
-</ul>
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
+            <h3 button class="accordion">About Her</button>
+                <hr>
+            </h3>
+
+
+            <div class="panel2">
+
+                <h4 style="color:black"> Wowie A Whole Page About Me! </h4>
+                <div class="container2">
+                    <div class="image">
+                        <img style="float:left" src="img/bio.png" alt="alice" width="550px">
+                    </div>
+                    <div class="text">
+                        <p> Hey there! I will pretend that you have not seen my name plastered on the whole website and
+                            re-introduce myself. Hi! My name is Alicia or Alice for short! I am an 18-year-old student
+                            studying
+                            digital media design at RMIT. I have always had an interest in art and design since very
+                            young.
+                            Started from scribbling on my parent’s bedroom walls, tried sketching, painting, and now
+                            experimenting on the digitals. I discovered various design platforms like Photoshop,
+                            Illustrator,
+                            Premiere, etc at the end of middle school and have been absolutely riveted by them since.
+                            <br><br>
+                            I tend to get heavily inspired by my own personal experiences mixed with different kinds of
+                            art such
+                            as movies and designs. I consider everything I have been through as tiny puzzle pieces that
+                            creates
+                            who I am and I constantly try to express that through my works. Thus, design has been an
+                            outlet for
+                            me to share my memories and relive my past experiences. Through design, I recognize more
+                            about
+                            myself and hopefully also help people discover more about themselves. In the future, I hope
+                            to
+                            exercise my design thinking and explore even more digital media design forms and techniques.
+                        </p>
+                    </div>
+                </div>
+                <br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+
+        <div class="panel" data-color="black">
+
+            <h2 class="marquee">
+                <span> Alice's Digital Media Projects ⇾</span>
+                <span>Alice's Digital Media Projects ⇾</span>
+                <span>Alice's Digital Media Projects ⇾</span>
+                <span>Alice's Digital Media Projects ⇾</span>
+                <span>Alice's Digital Media Projects ⇾</span>
+                <span>Alice's Digital Media Projects ⇾</span>
+                <span>Alice's Digital Media Projects ⇾</span>
+                </p>
+                <h2 style="font-size:5vw"> Alice's Digital Media Projects </h2>
+                <br><br><br><br><br><br><br><br>
+
+                <h3 style="color:white" class="accordion">Video Remix</button>
+                    <hr>
+                </h3>
+                <div class="panel2">
+                    <div class="center"><img style="justify-content: center;" src="img/video.png" alt="video remix image"
+                            width="80%"></div><br><br>
+                    <p style="color:white">My first assignment was to make a video remix using video (visual) and audio
+                        from
+                        2 different sources. The goal was to create a completely different video with a different
+                        storyline
+                        by combining the 2 by only using cuts and simple transitions in Premiere Pro. My entire working
+                        process for this assignment consists of 3 main steps. First, I decided on a main concept, then
+                        experimented with the videos and editing tools, and lastly construct a more specific storyline
+                        as I
+                        edit and pick out details to complete the videos.
+                    </p><br>
+                    <h4 style="text-align:left">Concept</h4>
+                    <p style="color:white">Upon watching the video I chose for my visuals, I immediately thought of a
+                        propaganda-ish concept about a town that seems perfect on the outside but has its own dark
+                        hidden
+                        secrets. I chose this theme because I wanted to take a different approach from the original
+                        storyline. The video I chose for the visual was called New Town and it was about a town getting
+                        overpopulated that they have to expand and move to a new town. While watching the video, I
+                        noticed
+                        that it has hints of dark vibes here and there, so I wanted to exaggerate the dark vibes from
+                        the
+                        original video and create a more ominous concept. Then I created a storyboard to build the
+                        concept
+                        into amore detailed storyline.
+                        <div class="center"><img style="justify-content: center;" src="img/storyboard.png" alt="video remix image"
+                            width="80%"></div>
+                    </p><br><br>
+                    <h4 style="text-align:left">Experimentation</h4>
+                    <p style="color:white">The first thing I did to approach this project was to watch each video
+                        sources
+                        and choose 2 video that stood out to me. With those 2 videos, I started creating a concept and
+                        watched the visual video source multiple times. I imported them to Premiere and started by
+                        cutting
+                        up each scene and making folders separated by the overall mood or genre(dialogue, landscapes,
+                        actions, etc) of each scene. <br>
+                        I constructed the audio first and then scoured the folders to choose scenes that can work well
+                        with
+                        the audio. Just by experimenting, I saw that audio can really reshape a mood of a scene really
+                        well
+                        and change the whole meaning. So then I started experimenting by picking a few scenes from my
+                        mood
+                        folder and tried to make it into an opposite mood by just using fitting audios.
+                        <br>After experimentation, I chose a key scene in my whole video which was to have a glitch
+                        transition
+                        juxtaposing the different sides of the town. So I constructed the glitch transition first by
+                        cutting
+                        up my video and audio into really short keyframes. Then, I compile them in a random order and
+                        layered my audio.
+                    </p><br><br>
+                    <h4 style="text-align:left">Finalization</h4>
+                    <p style="color:white">I constructed the rest of the video based on the glitch scene. I mostly fixed
+                        the sound as it was a big part that can keep audiences’ attention. I lowered parts of the audio
+                        that sound unpleasantly loud and added some underlying background noises to set the mood even
+                        more.
+                       
+                    </p><br><br>
+                    <div style="text-align:center;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mkZcR3CPkE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <h3 style="color:white" class="accordion">Icon and Web Html</button>
+                    <hr>
+                </h3>
+                <div class="panel2">
+                    <p style="color:white">For assignment 2, we were asked to create a website containing 9 icons that
+                        emits a relating sound when clicked. We were also given a few theme options.
+                        <br><br>
+                        The main theme that I chose was “memory”, specifically childhood memories. At first, I had
+                        considered three different themes, which are "growth", "memory", and "dream". I also was very
+                        interested in jamais fu, which refers to a memory of something familiar but feels foreign to
+                        you. But after much consideration, I chose to talk about childhood memories as it was a special
+                        period for me, are easier to translate into simple icons, and often has a vibrant and fun color
+                        scheme which I favor in general.
+                        </p><br><br>
+
+                        <p style="color:white">I did not know what colours to use when I initially made the thumbnail sketches. Following the
+                        first three vector icon designs, I had a slight confusion with my initial ideas and present
+                        icons at the time so I decided to express a little melancholy in the project, as childhood
+                        memories are not just vibrant and fun, but also a bittersweet period in most people’s lives. I
+                        applied a triadic colour scheme inspired by an artist I saw on a social media app, and played
+                        with it in Illustrator to create a muted yet a bit saturated to bring the ‘old’ feeling into it.
+                        I chose a triadic color palette because I find it to be the most vibrant and contrasting color
+                        scheme whilst exploring on adobe colors.
+                        <br><br>
+                        <div class="center"><img style="justify-content: center;" src="img/colpal.png" alt="video remix image"
+                            width="70%"></div><br><br>
+
+                        <p style="color:white">I first associated my theme of childhood memories with toys/games for the happy memories of that
+                        time. After making a few sketches in frustration, I proceeded with a teddy bear and a swing
+                        before my brain suddenly revved up and produced the rest of the icons. I went through many
+                        processes of iteration especially in implementing the colors to each sketch. Due to the limited
+                        amount of colors, I had to test a few versions to see which one looks best. In the process, I
+                        also made a few changes to my sketch to unify them better with the other icons. Many of my
+                        sketches for example the balloon popping also did not make it to the final 9 icons because I
+                        feel like it is harder to translate into a flat design. I also considered that the sound would
+                        be too similar to the ice cream icon (a pop and a sound of a child crying).
+                        </p><br><br>
+
+<div class="center"><img style="justify-content: center;" src="img/iteration.png" alt="video remix image"
+                            width="70%"></div><br><br>
+
+                        <p style="color:white">During the process, I just tried to work on other parts of the assignment like the html code and
+                        sound until I get another idea for another icon. The hardest part here was to show a universal
+                        experience through the icons I made, which initially are too personally related to myself.
+                        There is no intentional order to go through the icons as they were placed according to how their
+                        colours look with each other. However, to express the ups and downs of childhood, I deliberately
+                        had happy and sad icons, 6 of the former and the rest is as is.
+                        <br><br>
+                        In the very last part of this project to insert the images into GitHub, I encountered a
+                        painstaking problem of the page not showing anything at all. I could finally solve the issue
+                        after 3 hours of web searching and asking my peers, in which I made a new branch for the images
+                        folder then renamed my website. Although the process was confusing most of the time, I was quite
+                        satisfied with the outcome, mainly because I was able to finish the project and loved how my
+                        icons looked from a graphic design perspective.
+                        
+                        
+     <div class="row">
+        <div class="image-container slide-top"><img id="icon1" src="img/icon1.png" height="180" width="180" /></div>
+        <div class="image-container"><img id="icon2" src="img/icon2.png" height="180" width="180" /></div>
+        <div class="image-container"><img id="icon3" src="img/icon3.png" height="180" width="180" /></div>
+    </div>
+
+    <div class="row">
+        <div class="image-container"><img id="icon4" src="img/icon4.png" height="180" width="180" /></div>
+        <div class="image-container"><img id="icon5" src="img/icon5.png" height="180" width="180" /></div>
+        <div class="image-container"><img id="icon6" src="img/icon6.png" height="180" width="180" /></div>
+    </div>
+
+    <div class="row">
+        <div class="image-container"><img id="icon7" src="img/icon7.png" width="180" /></div>
+        <div class="image-container"><img id="icon8" src="img/icon8.png" width="180" /></div>
+        <div class="image-container"><img id="icon9" src="img/icon9.png" width="180" /></div>
+    </div>
+
+    <script>
+        var sound1 = new buzz.sound("sound/memory.mp3");
+        var sound2 = new buzz.sound("sound/wheel.mp3");
+        var sound3 = new buzz.sound("sound/laugh.mp3");
+        var sound4 = new buzz.sound("sound/ghost.mp3");
+        var sound5 = new buzz.sound("sound/backpack.mp3");
+        var sound6 = new buzz.sound("sound/icecream.mp3");
+        var sound7 = new buzz.sound("sound/nintendo.mp3");
+        var sound8 = new buzz.sound("sound/swing.mp3");
+        var sound9 = new buzz.sound("sound/cardboard.mp3");
+
+        window.onload = function () {
+            document.getElementById('icon1').addEventListener('click', function () {
+                sound1.play();
+            });
+            document.getElementById('icon2').addEventListener('click', function () {
+                sound2.play();
+            });
+            document.getElementById('icon3').addEventListener('click', function () {
+                sound3.play();
+            });
+            document.getElementById('icon4').addEventListener('click', function () {
+                sound4.play();
+            });
+            document.getElementById('icon5').addEventListener('click', function () {
+                sound5.play();
+            });
+            document.getElementById('icon6').addEventListener('click', function () {
+                sound6.play();
+            });
+            document.getElementById('icon7').addEventListener('click', function () {
+                sound7.play();
+            });
+            document.getElementById('icon8').addEventListener('click', function () {
+                sound8.play();
+            });
+            document.getElementById('icon9').addEventListener('click', function () {
+                sound9.play();
+            });
         }
-      });
-    }
+    </script>
+                        
+                                <p style="text-align:center"> <a href="https://s3927813.github.io/s3927813/"> Click To Open Icon Site </a></p>
+                            
+    
+                    </p>
+                </div>
+
+                <h3 style="color:white" class="accordion"> Unity 3D Environment</button>
+                    <hr>
+                </h3>
+                <div class="panel2">
+                    <p style="color:white">My third assignment was to create a 3d environment that is based on a
+                        meaningful change in life. I decided to create an environment based on grief, specifically the
+                        stages of grief I experienced in my life that brought a big impact for me. For this assignment,
+                        a working prototype was especially crucial for my design process. Even though I tend to
+                        experiment a lot and have my working prototype as more generalized and dynamic rather than
+                        having detailed small steps, it is a key part for me to be able to work efficiently and not just
+                        blindlessly creating and importing stuff without a general idea.
+                        <br><br>
+                        Working on a 3d project was very different from working on a 2d media. It is much harder to
+                        control audiences’ attention because of the much bigger interactive space 3d media offers.
+                        People can explore and interact with your work rather than just be an outsider ‘looking in’.
+                        Thus in exchange, I also had to work harder to control my space so people have a direction of
+                        where to look and where to go. One of the most interesting tools in Unity was the virtual
+                        camera. The virtual camera allows you to pick a point of view to showcase your work, and for
+                        this assignment, we all used a first person camera. The first person camera allows audiences to
+                        explore firsthand as a ‘character’ inside the environment rather than someone ‘outside’ the
+                        environment. This virtual camera lets people interact with the environment itself, different
+                        from the role of the camera in assignment 1 which does not offer any control to the viewer. I
+                        think the virtual camera is a really interesting tool because it grants audiences the experience
+                        of being a part of the space.
+                        <br><br>
+                        <div class="center"><img style="justify-content: center;" src="img/3d.png" alt="video remix image"
+                            width="80%"></div>
+                        One aspect that can help attract user’s attention in your space is sound. As per the other
+                        assignments, sound plays a crucial part in setting the mood and attracting attention to an
+                        object. In a 3d space, sound can be used in a three-dimensional way as well. We used the 360
+                        sound feature in Unity to create a sound that interacts with distance (louder when you are near
+                        the sound source and the other way around).
+                        To unify the many different elements in my space, I used lighting, colors, and grass to blend
+                        everything together. I used the terrain tool to create mountains to cover a different part of
+                        the environment and created a pathway for users to follow. Having a same style of each 3d
+                        objects are also important to unify my space and make everything look put together.
+                        Along the design process, my concept evolved following each environment’s development. I did not
+                        have a detailed idea of what kind of environment I wanted to do at first, but as I continued to
+                        create the environment, the colors and little details I had not thought of before just popped in
+                        my head.
+                        <br><br>
+                        The most frequent step I kept repeating in my working process was to playtest. Almost every time
+                        that I added something new, I playtest after to see if everything looks unified and purposeful.
+                        One of the examples are when I created the cave part of my environment. The cave was pretty
+                        tricky because I have to add mesh planes around it to avoid the character falling out of the
+                        world. Because of it’s textures, I have to playtest multiple times to see if I can walk out of
+                        the cave properly. Another important thing I realized by playtesting is to see if the sizes of
+                        each object make sense and contribute to the mood I am going for.
+                        
+                    </p><br><br><br><br>
+                    <div style="text-align:center;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_49qJ-jcU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <br><br><br><br>
+
+    
+    
+            <p style="text-align:center"><a href="#heading">Back To Top </a></p>
+         
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
     </script>
 </body>
